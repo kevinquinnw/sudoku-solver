@@ -4,6 +4,7 @@
 
 This uses two dimensional array list to return a solution using backtracking. 
 
+
 def sudoku_solver(bo):
     find = find_empty(bo)
     if not find:
@@ -24,7 +25,8 @@ def sudoku_solver(bo):
     
 # Valid 
 
-Returns if the attempted move is valid
+Returns if the attempted move is valid.
+
 
 def valid(bo, num, pos):
     # Check row
@@ -54,6 +56,7 @@ def valid(bo, num, pos):
 This is the function that prints the board output.
 
 
+
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
@@ -71,7 +74,8 @@ def print_board(bo):
 
 #Find_Empty
 
-This finds empty spaces in the board and fills them
+This finds empty spaces in the board and fills them.
+
 
 def find_empty(bo):
     for i in range(len(bo)):
