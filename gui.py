@@ -36,7 +36,7 @@ class Grid:
             self.cubes[row][col].set(val)
             self.update_model()
 
-            if valid(self.model, val, (row,col)) and self.sudoku_solve():
+            if valid(self.model, val, (row,col)) and self.solve():
                 return True
             else:
                 self.cubes[row][col].set(0)
@@ -98,7 +98,7 @@ class Grid:
                     return False
         return True
 
-    def sudoku_solve(self):
+    def solve(self):
         find = find_empty(self.model)
         if not find:
             return True
@@ -109,14 +109,14 @@ class Grid:
             if valid(self.model, i, (row, col)):
                 self.model[row][col] = i
 
-                if self.sudoku_solve():
+                if self.solve():
                     return True
 
                 self.model[row][col] = 0
 
         return False
 
-    def suduko_solve_gui(self):
+    def solve_gui(self):
         find = find_empty(self.model)
         if not find:
             return True
@@ -132,7 +132,7 @@ class Grid:
                 pygame.display.update()
                 pygame.time.delay(100)
 
-                if self.sudoku_solve_gui():
+                if self.solve_gui():
                     return True
 
                 self.model[row][col] = 0
@@ -291,7 +291,7 @@ def main():
                     key = None
 
                 if event.key == pygame.K_SPACE:
-                    board.sudoku_solve_gui()
+                    board.solve_gui()
 
                 if event.key == pygame.K_RETURN:
                     i, j = board.selected
