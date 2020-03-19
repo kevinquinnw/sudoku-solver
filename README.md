@@ -1,5 +1,5 @@
 # sudoku-solver
-This is a sudoku solver using the backtracking algorithm. It includes a graphical GUI so just run the GUI.py to play the game. I hope you enjoy :) 
+This is a sudoku solver using a backtracking algorithm. It includes a graphical GUI so just run the GUI.py to play the game. I hope you enjoy :) 
 
 
 # Instructions
